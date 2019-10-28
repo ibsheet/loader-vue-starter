@@ -1,6 +1,6 @@
 # ibsheet-loader-vue-starter
 
-[`@ibsheet/loader`](https://github.com/ibsheet/loader) starter for angular
+[`@ibsheet/loader`](https://github.com/ibsheet/loader) starter for vue
 
 ## clone project
 
