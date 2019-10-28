@@ -34,8 +34,7 @@ const router = new VueRouter({
 loader.config({
   registry: [{
     name: 'ibsheet',
-    // baseUrl: '/assets/ibsheet'
-    baseUrl: 'https://dev.ibleaders.com/lib/ibsheet-js/v8/core/nightly/latest'
+    baseUrl: '/public/ibsheet'
   }]
 })
 
