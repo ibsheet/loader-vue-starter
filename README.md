@@ -2,23 +2,27 @@
 
 [`@ibsheet/loader`](https://github.com/ibsheet/loader) starter for vue
 
-## clone project
+## Clone Project
 
 ```bash
 git clone https://github.com/ibsheet/loader-vue-starter ibl-vue-starter
 cd ibl-vue-starter
 ```
 
-## setup and start
+## Copy IBSheet Library
 
-#### Using npm:
+copy to: `public/ibsheet`
+
+## Start
+
+### Using npm:
 
 ```
 npm install
 npm start
 ```
 
-#### Using yarn:
+### Using yarn:
 
 ```
 yarn
