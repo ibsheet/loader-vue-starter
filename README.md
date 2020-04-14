@@ -19,12 +19,12 @@ copy to: `public/ibsheet`
 
 ```
 npm install
-npm start
+npm run serve
 ```
 
 ### Using yarn:
 
 ```
 yarn
-yarn start
+yarn serve
 ```
