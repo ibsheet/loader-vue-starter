@@ -9,17 +9,18 @@
 import loader from '@ibsheet/loader'
 import { SheetSampleData } from '../shared/ibsheet-data'
 
-const SHEET_ID = 'sheet'
+let SHEET_ID = ''
 
 export default {
   mounted() {
     const { data, options } = SheetSampleData[1]
     loader.createSheet({
-      id: SHEET_ID,
       el: 'sheetContainer',
       options,
       data
-    })
+    }).then((sheet) => {
+      SHEET_ID = sheet.id
+    });
   },
   beforeDestroy() {
     loader.removeSheet(SHEET_ID)
