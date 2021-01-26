@@ -2,5 +2,6 @@ module.exports = {
     devServer: {
         overlay: false
     },
-    lintOnSave:false
+    lintOnSave:false,
+    transpileDependencies: ['@ibsheet/loader']
 }
