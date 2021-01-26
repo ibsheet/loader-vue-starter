@@ -9,21 +9,23 @@
   },
   "dependencies": {
     "@ibsheet/loader": "latest",
-    "core-js": "^3.3.2",
-    "vue": "^2.6.10",
-    "vue-router": "^3.1.3"
+    "babel-polyfill": "^6.26.0",
+    "core-js": "^3.8.3",
+    "vue": "^2.6.12",
+    "vue-router": "^3.5.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.0.5",
-    "@vue/cli-plugin-eslint": "^4.0.5",
-    "@vue/cli-service": "^4.0.5",
-    "babel-eslint": "^10.0.3",
-    "eslint": "^5.16.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "node-sass": "^4.13.1",
-    "sass-loader": "^8.0.0",
-    "vue-loader": "^15.7.1",
-    "vue-template-compiler": "^2.6.10"
+    "@babel/preset-env": "^7.12.11",
+    "@vue/cli-plugin-babel": "^4.5.11",
+    "@vue/cli-plugin-eslint": "^4.5.11",
+    "@vue/cli-service": "^4.5.11",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.18.0",
+    "eslint-plugin-vue": "^7.5.0",
+    "node-sass": "^5.0.0",
+    "sass-loader": "^10.1.1",
+    "vue-loader": "^15.9.6",
+    "vue-template-compiler": "^2.6.12"
   },
   "eslintConfig": {
     "root": true,

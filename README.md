@@ -28,3 +28,35 @@ npm start
 yarn
 yarn start
 ```
+
+### Plugins
+
+```
+// babel-polyfill 설치
+yarn add babel-polyfill
+
+// babel-preset-env 추가 설치
+yarn add @babel/preset-env -D
+
+// .babelrc 파일 추가
+{
+    "presets": ["@babel/preset-env"]
+}
+
+// babel.config.js 파일 작성
+
+module.exports = {
+  presets: [
+    "@babel/preset-env"
+  ]
+}
+
+// vue.config.js 파일 작성
+
+module.exports = {
+    devServer: {
+        overlay: false
+    },
+    lintOnSave:false
+}
+```
