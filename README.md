@@ -31,6 +31,8 @@ yarn start
 
 ### Plugins
 
+해당 프로젝트에서 사용하는 Plugins 입니다. (yarn 실행하면 자동으로 설치됩니다.)
+
 ```
 // babel-polyfill 설치
 yarn add babel-polyfill
@@ -44,7 +46,6 @@ yarn add @babel/preset-env -D
 }
 
 // babel.config.js 파일 작성
-
 module.exports = {
   presets: [
     "@babel/preset-env"
@@ -52,7 +53,6 @@ module.exports = {
 }
 
 // vue.config.js 파일 작성
-
 module.exports = {
     devServer: {
         overlay: false
