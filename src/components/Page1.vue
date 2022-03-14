@@ -6,24 +6,25 @@
 </template>
 
 <script>
-import loader from '@ibsheet/loader'
-import { SheetSampleData } from '../shared/ibsheet-data'
+import loader from '@ibsheet/loader';
+import { SheetSampleData } from '../shared/ibsheet-data';
 
-let SHEET_ID = ''
+let SHEET_ID = '';
 
 export default {
   mounted() {
-    const { data, options } = SheetSampleData[0]
+    const { data, options } = SheetSampleData[0];
+
     loader.createSheet({
       el: 'sheetContainer',
       options,
       data
     }).then((sheet) => {
-      SHEET_ID = sheet.id
+      SHEET_ID = sheet.id;
     });
   },
   beforeDestroy() {
-    loader.removeSheet(SHEET_ID)
+    loader.removeSheet(SHEET_ID);
   }
 }
 </script>

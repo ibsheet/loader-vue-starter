@@ -7,7 +7,8 @@
 
 <script>
 /* eslint-disable no-console */
-import loader from '@ibsheet/loader'
+import loader from '@ibsheet/loader';
+
 export default {
   name: 'HelloWorld',
   data() {
@@ -16,7 +17,7 @@ export default {
     }
   },
   mounted() {
-    loader.unload()
+    loader.unload();
   }
 }
 </script>

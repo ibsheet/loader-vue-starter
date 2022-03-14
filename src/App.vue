@@ -7,7 +7,7 @@
         <li><router-link to="/">Home</router-link></li>
         <li><router-link to="/page1">Page1</router-link></li>
         <li><router-link to="/page2">Page2</router-link></li>
-      </ul>  
+      </ul>
     </div>
     <div class="main">
       <router-view></router-view>
@@ -36,7 +36,7 @@ loader.config({
     name: 'ibsheet',
     baseUrl: '/ibsheet'
   }]
-})
+});
 
 export default {
   name: 'app',
@@ -60,7 +60,7 @@ export default {
 }
 .main-navs {
   > h3 {
-    margin: 40px 0 0;  
+    margin: 40px 0 0;
   }
   > ul {
     list-style-type: none;
