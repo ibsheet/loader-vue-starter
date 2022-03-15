@@ -16,11 +16,11 @@
 </template>
 
 <script>
-import loader from '@ibsheet/loader'
-import VueRouter from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-import Page1 from './components/Page1.vue'
-import Page2 from './components/Page2.vue'
+import loader from '@ibsheet/loader';
+import VueRouter from 'vue-router';
+import HelloWorld from './components/HelloWorld.vue';
+import Page1 from './components/Page1.vue';
+import Page2 from './components/Page2.vue';
 
 const router = new VueRouter({
   mode: 'history',
@@ -56,7 +56,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 0px;
 }
 .main-navs {
   > h3 {

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>page1 works!</p>
+    <p>SearchMode: 2, 기본 페이지입니다.</p>
     <div id="sheetContainer"></div>
   </div>
 </template>
@@ -9,22 +9,24 @@
 import loader from '@ibsheet/loader';
 import { SheetSampleData } from '../shared/ibsheet-data';
 
-let SHEET_ID = '';
+let sheetId = '';
+const sheetEl = 'sheetContainer';
 
 export default {
   mounted() {
     const { data, options } = SheetSampleData[0];
 
     loader.createSheet({
-      el: 'sheetContainer',
+      el: sheetEl,
       options,
       data
     }).then((sheet) => {
-      SHEET_ID = sheet.id;
+      sheetId = sheet.id;
+      console.log('created sheet', sheet.id);
     });
   },
   beforeDestroy() {
-    loader.removeSheet(SHEET_ID);
+    loader.removeSheet(sheetId);
   }
 }
 </script>
