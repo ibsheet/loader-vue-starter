@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@ibsheet/loader": "latest",
+    "axios": "^0.27.2",
     "babel-polyfill": "^6.26.0",
     "core-js": "^3.8.3",
     "node-sass": "5.0.0",
