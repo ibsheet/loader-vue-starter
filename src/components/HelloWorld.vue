@@ -6,9 +6,6 @@
 </template>
 
 <script>
-/* eslint-disable no-console */
-import loader from '@ibsheet/loader';
-
 export default {
   name: 'HelloWorld',
   data() {
@@ -17,7 +14,7 @@ export default {
     }
   },
   mounted() {
-    loader.unload();
+    this.$_Loader.unload();
   }
 }
 </script>

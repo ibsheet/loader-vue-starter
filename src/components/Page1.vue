@@ -6,7 +6,6 @@
 </template>
 
 <script>
-import loader from '@ibsheet/loader';
 import { SheetSampleData } from '../shared/ibsheet-data';
 
 let sheetId = '';
@@ -16,7 +15,7 @@ export default {
   mounted() {
     const { data, options } = SheetSampleData[0];
 
-    loader.createSheet({
+    this.$_Loader.createSheet({
       el: sheetEl,
       options,
       data
@@ -27,7 +26,7 @@ export default {
     });
   },
   beforeDestroy() {
-    loader.removeSheet(sheetId);
+    this.$_Loader.removeSheet(sheetId);
   }
 }
 </script>

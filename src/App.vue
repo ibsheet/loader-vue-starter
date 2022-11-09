@@ -4,9 +4,9 @@
     <div class="main-navs">
       <h3>Go to Pages:</h3>
       <ul>
-        <li><router-link to="/">Home</router-link></li>
-        <li><router-link to="/page1">Page1</router-link></li>
-        <li><router-link to="/page2">Page2</router-link></li>
+        <router-link to="/" tag="li" :class="{active: $route.matched[0].name !== 'page1'}">Home</router-link>
+        <router-link to="/page1" tag="li" :class="'actvie'">Page1</router-link>
+        <router-link to="/page2" tag="li" :class="'actvie'">Page2</router-link>
       </ul>
     </div>
     <div class="main">
@@ -16,36 +16,21 @@
 </template>
 
 <script>
-import loader from '@ibsheet/loader';
-import VueRouter from 'vue-router';
-import HelloWorld from './components/HelloWorld.vue';
-import Page1 from './components/Page1.vue';
-import Page2 from './components/Page2.vue';
-
-const router = new VueRouter({
-  mode: 'history',
-  routes: [
-    { path: '/', name: 'home', component: HelloWorld },
-    { path: '/page1', name: 'page1', component: Page1 },
-    { path: '/page2', name: 'page2', component: Page2 }
-  ]
-})
-
-loader.config({
-  registry: [{
-    name: 'ibsheet',
-    baseUrl: '/ibsheet'
-  }]
-});
-
 export default {
   name: 'app',
   data() {
     return {
-      loaderVersion: loader.version
+      loaderVersion: this.$_Loader.version
     }
   },
-  router
+  created() {
+    this.$_Loader.config({
+      registry: [{
+        name: 'ibsheet',
+        baseUrl: '/ibsheet'
+      }]
+    });
+  }
 }
 </script>
 
@@ -68,10 +53,14 @@ export default {
     > li {
       display: inline-block;
       margin: 0 10px;
-      a > {
-        color: #42b983;
-      }
+      // a > {
+      //   color: #42b983;
+      // }
     }
   }
+}
+
+.router-link-exact-active {
+  color: aquamarine
 }
 </style>
