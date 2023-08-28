@@ -1,32 +1,29 @@
 {
-  "name": "ibsheet-loader-vue-starter",
+  "name": "loader_vue",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "vue-cli-service serve",
+    "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@ibsheet/loader": "latest",
-    "axios": "^0.27.2",
-    "babel-polyfill": "^6.26.0",
+    "@ibsheet/loader": "^1.1.22",
     "core-js": "^3.8.3",
-    "node-sass": "5.0.0",
-    "vue": "^2.6.12",
-    "vue-router": "^3.5.0"
+    "vue": "^2.6.14",
+    "vue-router": "3.5.0"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.12.11",
-    "@vue/cli-plugin-babel": "^4.5.11",
-    "@vue/cli-plugin-eslint": "^4.5.11",
-    "@vue/cli-service": "^4.5.11",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.18.0",
-    "eslint-plugin-vue": "^7.5.0",
-    "sass-loader": "^10.1.1",
-    "vue-loader": "^15.9.6",
-    "vue-template-compiler": "^2.6.12"
+    "@babel/core": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.16",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "node-sass": "^9.0.0",
+    "sass-loader": "^13.3.2",
+    "vue-template-compiler": "^2.6.14"
   },
   "eslintConfig": {
     "root": true,
@@ -37,22 +34,14 @@
       "plugin:vue/essential",
       "eslint:recommended"
     ],
-    "rules": {
-      "no-console": 0,
-      "no-unused-vars": 0,
-      "no-unused-modules": 0
-    },
     "parserOptions": {
-      "parser": "babel-eslint"
-    }
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
+      "parser": "@babel/eslint-parser"
+    },
+    "rules": {}
   },
   "browserslist": [
     "> 1%",
-    "last 2 versions"
+    "last 2 versions",
+    "not dead"
   ]
 }

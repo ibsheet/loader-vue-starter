@@ -311,7 +311,7 @@ IBSheetConvert.v7.convertTreeData = data7 => {
         return false;
     }
 
-    targetArr = targetArr.reduce((accum, currentVal, curretIndex, array) => {
+    targetArr = targetArr.reduce((accum, currentVal) => {
       const cloneObj = clone(currentVal);
       if (cloneObj["HaveChild"]) {
         cloneObj["Count"] = true;
