@@ -1,7 +1,4 @@
-module.exports = {
-    devServer: {
-        overlay: false
-    },
-    lintOnSave:false,
-    transpileDependencies: ['@ibsheet/loader']
-}
+const { defineConfig } = require('@vue/cli-service')
+module.exports = defineConfig({
+  transpileDependencies: true
+})
