@@ -1,77 +1,119 @@
-<template>
-  <div id="app">
-    <p>@ibsheet/loader v{{loaderVersion}}</p>
-    <div class="main-navs">
-      <h3>Go to Pages:</h3>
-      <ul>
-        <li><router-link to="/">Home</router-link></li>
-        <li><router-link to="/page1">Page1</router-link></li>
-        <li><router-link to="/page2">Page2</router-link></li>
-      </ul>
-    </div>
-    <div class="main">
-      <router-view></router-view>
-    </div>
-  </div>
-</template>
-
+<script setup>
+import { RouterLink, RouterView } from 'vue-router'
+</script>
 <script>
 import loader from '@ibsheet/loader';
-import VueRouter from 'vue-router';
-import HelloWorld from './components/HelloWorld.vue';
-import Page1 from './components/Page1.vue';
-import Page2 from './components/Page2.vue';
 
-const router = new VueRouter({
-  mode: 'history',
-  routes: [
-    { path: '/', name: 'home', component: HelloWorld },
-    { path: '/page1', name: 'page1', component: Page1 },
-    { path: '/page2', name: 'page2', component: Page2 }
-  ]
-})
+const ibsheetLib = {
+  name: 'ibsheet',
+  baseUrl: 'https://demo.ibsheet.com/ibsheet/v8/samples/customer-sample/assets/ibsheet/',
+  locales: ['en', 'ko'],
+  plugins: ['excel', 'common', 'dialog']
+}
 
+// 로더 config
 loader.config({
-  registry: [{
-    name: 'ibsheet',
-    baseUrl: '/ibsheet'
-  }]
+  registry: [ibsheetLib]
 });
 
-export default {
-  name: 'app',
-  data() {
-    return {
-      loaderVersion: loader.version
-    }
-  },
-  router
-}
+loader.load();
+
+const loaderVersion = loader.version;
 </script>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 0px;
+<template>
+  <header>
+    <p>@ibsheet/loader v {{ loaderVersion }}</p>
+    <div class="header-inner">
+      <div class="wrapper">
+        <nav>
+          <RouterLink to="/">Home</RouterLink>
+          <RouterLink to="/page1">Page1</RouterLink>
+          <RouterLink to="/page2">Page2</RouterLink>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <RouterView />
+</template>
+
+<style scoped>
+/* 전체 레이아웃 구성 */
+:global(body) {
+  margin: 0;
 }
-.main-navs {
-  > h3 {
-    margin: 40px 0 0;
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header {
+  width: 100%;
+  padding: 1rem;
+  background-color: #fff;
+  z-index: 1000;
+  position: sticky; /* or fixed if you want it always visible */
+  top: 0;
+}
+
+.logo {
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.wrapper {
+  flex-grow: 1;
+}
+
+nav {
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+}
+
+nav a.router-link-exact-active {
+  color: var(--color-text);
+}
+
+nav a.router-link-exact-active:hover {
+  background-color: transparent;
+}
+
+nav a {
+  display: inline-block;
+  padding: 0 1rem;
+  border-left: 1px solid var(--color-border);
+}
+
+nav a:first-of-type {
+  border: 0;
+}
+
+/* RouterView 아래 메인 콘텐츠가 전체 너비 사용하도록 */
+:deep(main), :deep(.router-view), :deep(.view-container) {
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1024px) {
+  .logo {
+    margin: 0 2rem 0 0;
   }
-  > ul {
-    list-style-type: none;
-    padding: 0;
-    > li {
-      display: inline-block;
-      margin: 0 10px;
-      a > {
-        color: #42b983;
-      }
-    }
+
+  header .wrapper {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  nav {
+    text-align: left;
+    margin-left: -1rem;
+    font-size: 1rem;
+    padding: 1rem 0;
   }
 }
 </style>
